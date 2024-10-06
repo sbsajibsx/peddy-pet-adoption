@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paddy Website</title>
+    <!-- font awesome cmd start -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- font awesome cmd end -->
+    <link rel="shortcut icon" href="images/logo.webp" type="image/x-icon">
+    <!-- google font start -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- google font end -->
+     <!-- tailwind and daisyUI CDN start -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- tailwind and daisyUL CDN end -->
+    <!-- tailwind css configuration start -->
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                btnc: "rgba(14, 122, 129, 1)",
+                hc: "rgba(14, 122, 129, 0.1)",
+                footerc: '#131313',
+              },
+              fontFamily: {
+                lato: '"Lato", sans-serif'
+              },
+            },
+          },
+        }
+    </script>
+    <!-- tailwind css configuration end -->
+</head>
+<body class="font-lato">
+    <!-- header start -->
+     <header>
+        <!-- navbar start -->
+         <nav class="w-11/12 mx-auto">
+          <div class="navbar">
+            <div class="navbar-start">
+              <a class="btn btn-ghost ">
+                <div>
+                  <img src="images/logo.webp" alt="">
+                </div>
+                <p class="font-black text-3xl">Peddy</p>
+              </a>
+            </div>
+            <div class="navbar-center hidden md:flex">
+              <ul class="menu menu-horizontal px-1">
+                <li class="hover:font-medium"><a>Home</a></li>
+                <li class="hover:font-medium"><a>Shop</a></li>
+                <li class="hover:font-medium"><a>Contact</a></li>
+              </ul>
+            </div>
+            <div class="navbar-end">
+              <div class="w-10 h-10 border rounded-full mr-3 items-center hidden md:flex justify-center"><i class="fa-regular fa-user"></i></i></div>
+            </div>
+            <div class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost md:hidden">
+                <div class="bg-white rounded-full p-2">
+                  <i class="fa-solid fa-bars"></i>
+                </div>
+              </div>
+              <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow right-0 gap-1">
+                <li><a>Home</a></li>
+                <li><a>Shop</a></li>
+                <li><a>Contact</a></li>
+              </ul>
+            </div>
+          </div>
+         </nav>
+        <!-- navbar end -->
+        <!-- banner start -->
+        <section class="w-11/12 mx-auto">
+            <div class="hero mt-10">
+                <div class="hero-content text-center">
+                  <div class="max-w-md">
+                    <h1>Bringing Families Together ❤️‍🔥
+                      <br>
+                      <span class="text-4xl font-bold">Your Path to Adoption Starts Here</span>
+                    </h1>
+                    <p class="py-6">
+                      Embark on a rewarding journey to find your perfect pet today! Our dedicated team is here to guide you through every step of the adoption process. Connect with loving animals in need of a forever home and experience the joy of companionship.
+                    </p>
+                    <button class="btn bg-btnc hover:bg-slate-300">Get Started</button>
+                    <div class="mt-10">
+                      <img src="images/pet.webp" alt="">
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </section>
+        <!-- banner end -->
+     </header>
+    <!-- header end -->
+    <!-- main start -->
+     <main>
+      <!-- category start -->
+       <div class="w-11/12 mx-auto">
+        <div class="items-center space-y-4">
+          <h1 class="font-black text-4xl text-center">Adopt  Your  Best Friend</h1>
+          <p class="text-center">Looking for loyalty, love, and companionship? Make a difference in a furry life by adopting a pet! Together, you can share countless adventures and unconditional love. Your perfect friend is waiting. Visit us today and discover the joy of adoption. 🐾❤️</p>
+        </div>
+        <div id="category" class="grid grid-cols-2 lg:grid-cols-4 mt-10">
+          <!-- category append here -->
+        </div>
+       </div>
+     </main>
+    <!-- main end -->
+    <!-- footer start -->
+     <footer class="bg-footerc">
+      <footer class="w-11/12 mx-auto footer text-neutral-content p-10 md:flex justify-around">
+        <nav>
+          <div class="footer-title flex items-center gap-3">
+            <div>
+              <img class="w-4 h-4" src="images/logo.webp" alt="">
+            </div>
+            <h1 class="font-extrabold text-2xl">Peddy</h1>
+          </div>
+          <div class="space-y-2">
+            <p>Location: av. Washington 165, NY CA</p>
+            <p>54003</p>
+            <p>Phone: +31 85 964 47 25</p>
+            <p>Email: info@yourdomain.com</p>
+            <p>Openings hours: 9.00 AM - 5.00 PM</p>
+          </div>
+          <div class="mt-5 grid grid-cols-4 gap-4">
+            <div>
+              <i class="fa-brands fa-facebook fa-2xl" style="color: #74C0FC;"></i>
+            </div>
+            <div><i class="fa-brands fa-x-twitter fa-2xl"></i></div>
+            <div><i class="fa-brands fa-youtube fa-2xl" style="color: #ff1f40;"></i></div>
+            <div><i class="fa-brands fa-instagram fa-2xl" style="color: #dd5840;"></i></div>
+          </div>
+        </nav>
+        <nav>
+          <h6 class="footer-title font-bold">Useful Links</h6>
+          <a class="link link-hover">Home</a>
+          <a class="link link-hover">About Us</a>
+          <a class="link link-hover">Animals</a>
+          <a class="link link-hover">Foundation</a>
+          <a class="link link-hover">Contact</a>
+        </nav>
+        <nav>
+          <h6 class="footer-title font-bold">Drop a Message</h6>
+          <div>
+            <input type="email" placeholder="Enter your email" class="input input-bordered" required />
+            <br>
+            <button class="btn bg-btnc hover:bg-slate-300 border-none w-full mt-5">Login</button>
+          </div>
+        </nav>
+      </footer>
+     </footer>
+    <!-- footer end -->
+</body>
+</html>
