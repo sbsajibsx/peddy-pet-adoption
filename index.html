@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paddy Website</title>
-    <link rel="stylesheet" href="style.css">
+    
     <!-- font awesome cmd start -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- font awesome cmd end -->
@@ -36,6 +36,7 @@
         }
     </script>
     <!-- tailwind css configuration end -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="font-lato">
     <!-- header start -->
@@ -115,15 +116,23 @@
             <p class="font-black text-xl">Best Deal For you</p>
             <button class="btn bg-btnc">Sort by Price</button>
           </div>
+          
           <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
-            <div id="pets" class="col-span-3 grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-              <!-- all pets here -->
+            <div class="col-span-3">
+              <div id="pets" class="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+                <!-- all pets here -->
+              </div>
             </div>
+
             <div id="like-pets" class="grid md:grid-cols-2 gap-2 border-2">
               <!-- like pets are here -->
             </div>
           </div>
         </section>
+        <div class="flex items-center justify-center"><div id="spinner"></div></div>
+        <div class="flex justify-center items-center my-4">
+          <button id="btnh" onclick="showAll()" class=" btn bg-btnc">Show All</button>
+        </div>
        </div>
      </main>
     <!-- main end -->
@@ -173,6 +182,22 @@
      </footer>
     <!-- footer end -->
 
+
+    <!-- Open the modal using ID.showModal() method -->
+    <button id="show-detail" class="btn hidden" onclick="my_modal_5.showModal()">open modal</button>
+    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle w-auto">
+      <div class="modal-box">
+        <div id="modal-content">
+
+        </div>
+        <div class="modal-action">
+          <form class="w-full" method="dialog">
+          <!-- if there is a button in form, it will close the modal -->
+          <button class="btn w-full bg-btnc text-white hover:text-black">Close</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
 
     <!-- script start -->
      <script src="js/pet.js"></script>
