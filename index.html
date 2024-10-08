@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paddy Website</title>
+    <link rel="stylesheet" href="style.css">
     <!-- font awesome cmd start -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- font awesome cmd end -->
@@ -99,16 +100,30 @@
      </header>
     <!-- header end -->
     <!-- main start -->
-     <main>
+     <main class="w-11/12 mx-auto">
       <!-- category start -->
        <div class="w-11/12 mx-auto">
         <div class="items-center space-y-4">
           <h1 class="font-black text-4xl text-center">Adopt  Your  Best Friend</h1>
           <p class="text-center">Looking for loyalty, love, and companionship? Make a difference in a furry life by adopting a pet! Together, you can share countless adventures and unconditional love. Your perfect friend is waiting. Visit us today and discover the joy of adoption. 🐾❤️</p>
         </div>
-        <div id="category" class="grid gap-20 grid-cols-2 lg:grid-cols-4 my-10">
+        <div id="category" class="w-11/12 mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-5 my-10">
           <!-- category append here -->
         </div>
+        <section class="w-11/12 mx-auto">
+          <div class="flex justify-between items-center my-10">
+            <p class="font-black text-xl">Best Deal For you</p>
+            <button class="btn bg-btnc">Sort by Price</button>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
+            <div id="pets" class="col-span-3 grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+              <!-- all pets here -->
+            </div>
+            <div id="like-pets" class="grid md:grid-cols-2 gap-2 border-2">
+              <!-- like pets are here -->
+            </div>
+          </div>
+        </section>
        </div>
      </main>
     <!-- main end -->
