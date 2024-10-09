@@ -6,6 +6,25 @@ const loadCategories = async () =>{
     
 }
 
+// load like
+
+const loadLikes = async (petId) =>{
+    const res = await fetch(`https://openapi.programming-hero.com/api/peddy/pet/${petId}`);
+    const data = await res.json();
+    displayLike(data.petData);
+}
+
+// display like
+
+const displayLike = (like) => {
+    const likeContainner = document.getElementById('like-pets');
+    likeContainner.innerHTML = `
+    <div><img src="${like.image}" /></div>
+    `
+    
+    
+}
+
 // load pets
 
 const loadPets = async (status) =>{
@@ -73,6 +92,46 @@ const loadDetails = async (petId) => {
     displayDetails(data.petData)
     
 };
+
+// adopt section
+
+const displayAdopt = (adopted) => {
+    const addClose = document.getElementById('of-modal');
+    addClose.classList = 'hidden';
+    const adoptContainer = document.getElementById('adopt-content');
+    
+    adoptContainer.innerHTML = `
+    <figure class="px-5 py-5 flex justify-center items-center">
+            <img class="w-20 h-20 rounded-xl" src="images/17357914.gif" alt="Shoes" />
+        </figure>
+        <div class="card-body px-5 py-5">
+            <div class="space-y-2">
+                <h1 class="font-bold text-3xl text-center">Congrates</h1>
+                <p class="text-center">Your pet is Adopting!!!</p>
+                <div class="flex justify-center items-center"><h2 id="count-number" class="text-4xl font-bold"></h2></div>
+            </div>
+            
+        </div>
+    `
+    // modal show
+    document.getElementById('show-adopt').click();
+    
+    // modal close
+    const countDown = document.getElementById('count-number');
+    let count = 3;
+    const interval = setInterval(function() {
+        count--;
+        countDown.textContent = count;
+        if (count <= 0) {
+            clearInterval(interval);
+            document.getElementById('of-modal').click();
+        }
+    }, 1000);
+    countDown.innerText = count;
+    
+}
+
+// disabled adopt button
 
 // display details
 
@@ -153,8 +212,8 @@ const displayPets = (pets) => {
                 <hr>
             </div>
             <div class="grid grid-cols-3 gap-1">
-                <button class="btn hover:bg-btnc hover:text-white"><i class="fa-regular fa-thumbs-up"></i></button>
-                <button class="btn text-btnc hover:bg-btnc hover:text-white" onclick="loadAdopt()">Adopt</button>
+                <button onclick="loadLikes(${pet.petId})" class="btn hover:bg-btnc hover:text-white"><i class="fa-regular fa-thumbs-up"></i></button>
+                <button id="adopt-${pet.petId}" class="btn text-btnc hover:bg-btnc hover:text-white" onclick="displayAdopt(${pet.petId})">Adopt</button>
                 <button class="btn text-btnc hover:bg-btnc hover:text-white" onclick="loadDetails(${pet.petId})">Details</button>
             </div>
         </div>
