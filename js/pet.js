@@ -18,10 +18,11 @@ const loadLikes = async (petId) =>{
 
 const displayLike = (like) => {
     const likeContainner = document.getElementById('like-pets');
-    likeContainner.innerHTML = `
+    const divLike = document.createElement('div');
+    divLike.innerHTML = `
     <div><img src="${like.image}" /></div>
     `
-    
+    likeContainner.append(divLike);
     
 }
 
@@ -30,13 +31,18 @@ const displayLike = (like) => {
 const loadPets = async (status) =>{
     const res = await fetch(`https://openapi.programming-hero.com/api/peddy/pets`);
     const data = await res.json();
-    if(status){
-        document.getElementById('btnh').classList.add('hidden');
-        displayPets(data.pets);
-    }
-    else{
-        displayPets(data.pets.slice(0,6));
-    }
+    // console.log(data.pets)
+    
+    
+        if(status){
+            document.getElementById('btnh').classList.add('hidden');
+            displayPets(data.pets);
+        }
+        else{
+            displayPets(data.pets.slice(0,6));
+        }
+    
+    
     
 }
 
@@ -128,6 +134,9 @@ const displayAdopt = (adopted) => {
         }
     }, 1000);
     countDown.innerText = count;
+    const adoptBtn = document.getElementById(`adopt-${adopted}`);
+    console.log(adoptBtn)
+    adoptBtn.setAttribute('disabled', true);
     
 }
 
@@ -167,6 +176,8 @@ const displayDetails = (pet) => {
     document.getElementById('show-detail').click();
 }
 
+
+
 // create display pets
 const displayPets = (pets) => {
     const petsContainner = document.getElementById('pets');
@@ -178,7 +189,7 @@ const displayPets = (pets) => {
     if(pets.length == 0){
         petsContainner.classList.remove('grid');
         petsContainner.innerHTML =  `
-        <div class="min-h-[400px] flex flex-col justify-center items-center space-y-4">
+        <div class="min-h-[400px] flex flex-col justify-center items-center space-y-4 ">
             <img src="images/error.webp" />
             <h2 class="text-center text-3xl font-bold">No Information Available</h2>
             <p>There are no Pets in this category</p>
@@ -200,7 +211,7 @@ const displayPets = (pets) => {
         card.classList = 'card card-compact border-2'
         card.innerHTML = `
         <figure class="px-5 py-5">
-            <img class="w-auto h-auto rounded-xl" src="${pet.image}" alt="Shoes" />
+            <img class="w-[300px]  rounded-xl" src="${pet.image}" alt="Shoes" />
         </figure>
         <div class="card-body px-5 py-5">
             <div class="space-y-2">
@@ -211,7 +222,7 @@ const displayPets = (pets) => {
                 <p class="flex gap-2 items-center"><i class="fa-solid fa-dollar-sign"></i> Price: ${pet.price}</p>
                 <hr>
             </div>
-            <div class="grid grid-cols-3 gap-1">
+            <div class="grid grid-cols-3 gap-4 lg:gap-1">
                 <button onclick="loadLikes(${pet.petId})" class="btn hover:bg-btnc hover:text-white"><i class="fa-regular fa-thumbs-up"></i></button>
                 <button id="adopt-${pet.petId}" class="btn text-btnc hover:bg-btnc hover:text-white" onclick="displayAdopt(${pet.petId})">Adopt</button>
                 <button class="btn text-btnc hover:bg-btnc hover:text-white" onclick="loadDetails(${pet.petId})">Details</button>
@@ -221,11 +232,17 @@ const displayPets = (pets) => {
         petsContainner.append(card)
         document.getElementById('spinner').style.display= 'none';
     })
-    },3000)
+    },2000)
     
 }
     
 
+// go main section
+
+const start = () =>{
+    const mainSection = document.getElementById('main');
+    mainSection.scrollIntoView({ behavior: 'smooth' });
+}
 
 
 
