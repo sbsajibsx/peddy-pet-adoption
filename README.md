@@ -42,23 +42,16 @@ Javascript
 Copy this command and paste your windows CDM
 
 ```
-git clone https://github.com/sbsajibsx/buy-players.git
+git clone https://github.com/sbsajibsx/peddy-pet-adoption.git
 
 ```
 
 <br>
 
-Type `npm i`
+Open with `Live Server`
 
-<br>
-
-Add your `.env`
-
-<br>
-
-Then Type `npm run dev`
 
 ## Links for visit
 
-- Github: ( https://github.com/sbsajibsx/buy-players )
+- Github: ( https://github.com/sbsajibsx/peddy-pet-adoption )
 - Live: ( https://comforting-panda-365d2b.netlify.app/ )
